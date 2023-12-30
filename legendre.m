@@ -24,14 +24,27 @@ a7 = 7.5 * int(f*p7,x,-1,1);
 a8 = 8.5 * int(f*p8,x,-1,1);
 a9 = 9.5 * int(f*p9,x,-1,1);
 
-appr_sig = a0*p0 + a1*p1 + a2*p2 + a3*p3 + a4*p4 + a5*p5 + a6*p6 + a7*p7; % a8*p8 + a9*p9;
-disp([vpa(a0) vpa(a1) vpa(a2) vpa(a3)]);
-%disp(appr_sig)
+vals  = zeros(1001,1);
+i = 1;
+for y = -5:0.01:5
+    poly = rec_legendre(y,7);
+    leg_point = a0*poly(1) + a1*poly(2) + a2*poly(3) + a3*poly(4) + a4*poly(5) + a5*poly(6) + a6*poly(7);
+    vals(i) = leg_point;
+    i = i  + 1;
+end
+disp(i);
 
-fplot([appr_sig f],[-5,5]);
-legend('Approximation', 'sigmoid')
-
-n = 1;
-Ln_2 = (2*n+1)/(n+1)*x*p1 - n/(n+1)*p0;
-disp(simplify(Ln_2));
+plot(vals);
+% appr_sig = a0*vals(1) + a1*vals(2) + a2*vals(3) + a3*vals(4) + a4*vals(5) + a5*vals(6) + a6*vals(7) + a7*vals(8);
+% 
+% % appr_sig = a0*p0 + a1*p1 + a2*p2 + a3*p3 + a4*p4 + a5*p5 + a6*p6 + a7*p7; % a8*p8 + a9*p9;
+% % disp([vpa(a0) vpa(a1) vpa(a2) vpa(a3)]);
+% % %disp(appr_sig)
+% 
+% fplot([appr_sig f],[-5,5]);
+% legend('Approximation', 'sigmoid')
+% 
+% n = 1;
+% Ln_2 = (2*n+1)/(n+1)*x*p1 - n/(n+1)*p0;
+% disp(simplify(Ln_2));
 
