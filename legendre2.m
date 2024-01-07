@@ -19,15 +19,15 @@ a2 = 2.5 * int(f*p2,x,-1,1);
 a3 = 3.5 * int(f*p3,x,-1,1);
 a4 = 4.5 * int(f*p4,x,-1,1);
 a5 = 5.5 * int(f*p5,x,-1,1);
-a6 = 6.5 * int(f*p6,x,-1,1);
+a6 = 6.5 * int(f*p6,x-1,1);
 a7 = 7.5 * int(f*p7,x,-1,1);
 a8 = 8.5 * int(f*p8,x,-1,1);
 a9 = 9.5 * int(f*p9,x,-1,1);
 
 vals  = zeros(1001,1);
 i = 1;
-for y = -5:0.01:5
-    poly = rec_legendre(y,7);
+for t = -5:0.01:5
+    poly = rec_legendre(t,7);
     leg_point = a0*poly(1) + a1*poly(2) + a2*poly(3) + a3*poly(4) + a4*poly(5) + a5*poly(6) + a6*poly(7);
     vals(i) = leg_point;
     i = i  + 1;
@@ -35,6 +35,7 @@ end
 disp(i);
 
 plot(vals);
+
 % appr_sig = a0*vals(1) + a1*vals(2) + a2*vals(3) + a3*vals(4) + a4*vals(5) + a5*vals(6) + a6*vals(7) + a7*vals(8);
 % 
 % % appr_sig = a0*p0 + a1*p1 + a2*p2 + a3*p3 + a4*p4 + a5*p5 + a6*p6 + a7*p7; % a8*p8 + a9*p9;

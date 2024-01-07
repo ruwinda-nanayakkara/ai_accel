@@ -11,5 +11,5 @@ poly_values(1) = 1;
 poly_values(2) = x;
 
 for i = 2:n-1
-    poly_values(i+1) =  ((2*i + 1)*x*poly_values(i)-n*poly_values(i-1))/(i+1);
+    poly_values(i+1) =  ((2*i + 1)*x*poly_values(i)-i*poly_values(i-1))/(i+1);
 end
