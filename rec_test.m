@@ -85,7 +85,7 @@ hold on
 fplot(f,[-10,10]);
 hold off
 
-plot(x1,error);
+%plot(x1,error);
 
 
 
